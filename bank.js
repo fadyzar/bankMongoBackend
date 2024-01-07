@@ -23,7 +23,7 @@ app.use(errorHandler); // Error handler middleware
 
 const PORT = process.env.PORT || 3000; // takes port from .env or just put 3000
 
-connectDB().then(()=>{
+mongoose.connect(process.env.MONGO_URI).then(()=>{
   app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
   });
