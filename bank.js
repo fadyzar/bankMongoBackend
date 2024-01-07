@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import usersRoutes from "./routes/usersRoutes.js";
+import router from "./routes/usersRoutes.js";
+
 
 import { errorHandler } from "./middlewares/errorMiddleware.js";
 import connectDB from "./config/db.js";
@@ -14,7 +15,7 @@ app.use(cors()); // Solving cors
 app.use(express.json()); // Body parser middleware
 
 // User Routes - create user, get users , get single user
-app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/users", router);
 
 
 
