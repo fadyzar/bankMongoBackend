@@ -94,32 +94,32 @@ export const deleteUser = async (req, res, next) => {
 
 
 
-export const depositCashController = async (req, res, next) => {
-  try {
-    const userId = req.params.userId;
-    const depositAmount = req.body.depositAmount;
+// export const depositCashController = async (req, res, next) => {
+//   try {
+//     const userId = req.params.userId;
+//     const depositAmount = req.body.depositAmount;
 
-    // Call depositCash function to handle the deposit
-    const updatedUserData = await depositCash(userId, depositAmount);
+//     // Call depositCash function to handle the deposit
+//     const updatedUserData = await depositCash(userId, depositAmount);
 
-    // Respond with the updated user data
-    res.send(updatedUserData);
-  } catch (error) {
-    next(error);
-  }
-};
+//     // Respond with the updated user data
+//     res.send(updatedUserData);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 
-export const handleWithdraw = async (userId, amount) => {
-  try {
-    const result = await withdraw(userId, amount);
-    console.log(result.message);
-    return result.user; // You can modify the return as needed
-  } catch (error) {
-    console.error('Error handling withdrawal:', error.message);
-    throw new Error('Withdrawal failed');
-  }
-};
+// export const handleWithdraw = async (userId, amount) => {
+//   try {
+//     const result = await withdraw(userId, amount);
+//     console.log(result.message);
+//     return result.user; // You can modify the return as needed
+//   } catch (error) {
+//     console.error('Error handling withdrawal:', error.message);
+//     throw new Error('Withdrawal failed');
+//   }
+// };
 
 
 
